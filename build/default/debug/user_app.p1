@@ -2573,8 +2573,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user_app.c: 102:         LATA++;
 [e ++ _LATA -> -> 1 `i `Vuc ]
 "103
-[; ;user_app.c: 103:         u322 = (u32)64000000/4/1;
-[e = _u322 / / -> -> 64000000 `l `ul -> -> -> 4 `i `l `ul -> -> -> 1 `i `l `ul ]
+[; ;user_app.c: 103:         u322 = (u32)64000000/4/2;
+[e = _u322 / / -> -> 64000000 `l `ul -> -> -> 4 `i `l `ul -> -> -> 2 `i `l `ul ]
 "104
 [; ;user_app.c: 104:         _delay(u322);
 [e ( __delay (1 _u322 ]

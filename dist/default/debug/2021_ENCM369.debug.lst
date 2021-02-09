@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Mon Feb 08 21:06:40 2021
+                                                                                               Mon Feb 08 21:21:40 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	18F27Q43
@@ -270,11 +270,11 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    236  01FFBA  2ABE               	incf	190,f,c	;volatile
    237  01FFBC                     
    238                           ;user_app.c: 104:         _delay(u322);
-   239  01FFBC  0E52               	movlw	82
+   239  01FFBC  0E29               	movlw	41
    240  01FFBE  6E02               	movwf	(??_UserAppRun+1)^(0+1280),c
-   241  01FFC0  0E2B               	movlw	43
+   241  01FFC0  0E96               	movlw	150
    242  01FFC2  6E01               	movwf	??_UserAppRun^(0+1280),c
-   243  01FFC4  0E00               	movlw	0
+   243  01FFC4  0E7F               	movlw	127
    244  01FFC6                     u27:
    245  01FFC6  2EE8               	decfsz	wreg,f,c
    246  01FFC8  D7FE               	bra	u27
@@ -282,7 +282,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    248  01FFCC  D7FC               	bra	u27
    249  01FFCE  2E02               	decfsz	(??_UserAppRun+1)^(0+1280),f,c
    250  01FFD0  D7FA               	bra	u27
-   251  01FFD2  D000               	nop2	
+   251  01FFD2  F000               	nop	
    252  01FFD4                     
    253                           ;user_app.c: 105:     }
    254  01FFD4  0E01               	movlw	1
@@ -1129,7 +1129,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Mon Feb 08 21:06:40 2021
+Symbol Table                                                                                   Mon Feb 08 21:21:40 2021
 
      __size_of_SysTickSetup 0022                          l13 FF3A                          l22 FF3C  
                         l16 FF4E                          l19 FF82                          l62 FFFA  
