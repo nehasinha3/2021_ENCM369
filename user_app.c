@@ -94,7 +94,16 @@ Promises:
 */
 void UserAppRun(void)
 {
-
+    LATA = 0x80;
+    u32 u322;
+    u32 u32Counter = 0;
+    
+    for (u32 i=0; i<64; i++) {
+        LATA++;
+        u322 = FCY/2;
+        _delay(u322); 
+    }
+      
 
 } /* end UserAppRun */
 
