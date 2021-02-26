@@ -1,7 +1,0 @@
-neha,sinha,nehasinha3000@gmail.com,nehasinha3,2021_ENCM369
-marcelo,li_gonzales,marcelo.ligonzales@ucalgary.ca,MarceloLiGonzales,ENCM369
-john,santos,john.santos2@ucalgary.ca,JohnVSantos,ENCM369
-Zachary,Tigchelaar,zachary.tigchelaar@ucalgary.ca,jzactmbk,2021_ENCM369
-Nabiha,Alam,nabiha.alam@ucalgary.ca,NabihaAlam,2021_ENCM369
-Emily,Knight,emily.knight2@ucalgary.ca,emilyzk,2021_ENCM369
-Madeline,Brown,madeline.brown@ucalgary.ca,madelinebrownn,ENCM369
