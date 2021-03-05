@@ -56,16 +56,12 @@ Function Definitions
 
 /*!---------------------------------------------------------------------------------------------------------------------
 @fn void ClockSetup(void)
-
 @brief Loads all registers required to set up the processor clocks.
-
 Requires:
 - NONE
-
 Promises:
 - EFC is set up with proper flash access wait states based on 48MHz system clock
 - PMC is set up with proper oscillators and clock sources
-
 */
 void ClockSetup(void)
 {
@@ -76,36 +72,27 @@ void ClockSetup(void)
 
 /*!---------------------------------------------------------------------------------------------------------------------
 @fn void GpioSetup(void)
-
 @brief Loads registers required to set up GPIO on the processor.
-
 Requires:
 - All configurations must match connected hardware.
-
 Promises:
 - Output pin for PA31_HEARTBEAT is configured
-
 */
 void GpioSetup(void)
 {
-    PORTA = 0x00;
+    LATA = 0x80;
     TRISA = 0x00;
     ANSELA = 0x00;
-  
 } /* end GpioSetup() */
 
 
 /*!---------------------------------------------------------------------------------------------------------------------
 @fn  void SysTickSetup(void)
-
 @brief Initializes the 1ms and 1s System Ticks off the core timer.
-
 Requires:
 - NVIC is setup and SysTick handler is installed
-
 Promises:
 - Both global system timers are reset and the SysTick core timer is configured for 1ms intervals
-
 */
 void SysTickSetup(void)
 {
@@ -118,16 +105,12 @@ void SysTickSetup(void)
 
 /*!---------------------------------------------------------------------------------------------------------------------
 @fn void SystemSleep(void)
-
 @brief Puts the system into sleep mode.  
-
-
 Requires:
 - 
  * 
 Promises:
 - 
-
 */
 void SystemSleep(void)
 {    
@@ -150,6 +133,3 @@ void SystemSleep(void)
 /*--------------------------------------------------------------------------------------------------------------------*/
 /* End of File */
 /*--------------------------------------------------------------------------------------------------------------------*/
-
-
-

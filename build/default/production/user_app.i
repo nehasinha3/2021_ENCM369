@@ -27273,7 +27273,7 @@ typedef enum {ACTIVE_LOW = 0, ACTIVE_HIGH = 1} GpioActiveType;
 
 
 # 1 "./encm369_pic18.h" 1
-# 60 "./encm369_pic18.h"
+# 58 "./encm369_pic18.h"
 void ClockSetup(void);
 void GpioSetup(void);
 
@@ -27289,6 +27289,7 @@ void SystemSleep(void);
 # 27 "./user_app.h"
 void UserAppInitialize(void);
 void UserAppRun(void);
+void TimeXus (u16 u16Microseconds);
 # 106 "./configuration.h" 2
 # 26 "user_app.c" 2
 
@@ -27306,24 +27307,44 @@ volatile u8 G_u8UserAppFlags;
 extern volatile u32 G_u32SystemTime1ms;
 extern volatile u32 G_u32SystemTime1s;
 extern volatile u32 G_u32SystemFlags;
-# 76 "user_app.c"
+# 71 "user_app.c"
 void UserAppInitialize(void)
 {
-
+    LATA = 0x80;
+    T0CON1 = 0x54;
+    T0CON0 = 0x90;
 
 }
-# 95 "user_app.c"
+# 92 "user_app.c"
+void TimeXus(u16 u16Microseconds)
+{
+    T0CON0 &= 0x7F;
+    u16 u16Timer = 0xFFFF - u16Microseconds;
+    TMR0L = u16Timer & 0x00FF;
+    TMR0H = (u8) ((u16Timer & 0xFF00) >> 8 );
+    PIR3 &= 0x7F;
+    T0CON0 |= 0x80;
+}
+# 110 "user_app.c"
 void UserAppRun(void)
 {
-    LATA = 0x80;
-    u32 u322;
-    u32 u32Counter = 0;
+    static u16 u16Delay = 0x0000;
+    static int stateofLED = 0;
 
-    for (u32 i=0; i<64; i++) {
-        LATA++;
-        u322 = (u32)64000000/4/1;
-        _delay(u322);
+    static u8 u8Pattern[22] = {0x00, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x21, 0x22, 0x24, 0x28, 0x30, 0x31, 0x32, 0x34, 0x38, 0x39, 0x3A, 0x3C, 0x3D, 0x3E, 0x3F};
+    u16Delay++;
+
+    if(u16Delay == 1000)
+    {
+       u16Delay = 0x0000;
+       u8 u8var = LATA;
+       u8var &= 0x80;
+       u8var |= u8Pattern[stateofLED];
+       LATA = u8var;
+       stateofLED++;
+       if(stateofLED == 22)
+       {
+           stateofLED = 0;
+       }
     }
-
-
 }
