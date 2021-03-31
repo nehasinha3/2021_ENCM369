@@ -9,12 +9,14 @@
 /*! @cond DOXYGEN_EXCLUDE */
 /***********************************************************************************************************************
 Perihperal Setup Initializations
+
 Bookmarks:
 &&&&& Function Declarations
 !!!!! GPIO pin names
 @@@@@ Watchdog, Power Control, Clock, and Systick setup values
 ##### GPIO initial setup values
 $$$$$ PWM setup values
+
 ***********************************************************************************************************************/
 /*! @endcond */
 
@@ -117,6 +119,7 @@ void SystemSleep(void);
     06 [0] PA_06_
     05 [0] PA_05_
     04 [0] PA_04_
+
     03 [0] PA_03_
     02 [1] PA_02_SD_DETECT PIO control enabled
     01 [1] PA_01_SD_WP PIO control enabled
@@ -140,12 +143,12 @@ void SystemSleep(void);
     06 [0] 
     05 [0] 
     04 [0] 
+
     03 [0] 
     02 [0] 
     01 [0] 
     00 [0] 
 */
-
 
 
 
