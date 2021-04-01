@@ -44,7 +44,7 @@ extern volatile u32 G_u32SystemFlags;                     /*!< @brief From main.
 Global variable definitions with scope limited to this local application.
 Variable names shall start with "UserApp_<type>" and be declared as static.
 ***********************************************************************************************************************/
-
+static u8 u8Counter = 0; 
 static u8 UserApp_au8SineTable[] =
 {
     0x80,0x83,0x86,0x89,0x8c,0x8f,0x92,0x95,0x98,0x9b,0x9e,0xa2,0xa5,0xa7,0xaa,0xad,
