@@ -239,17 +239,17 @@ void UserAppRun(void)
 {
     static u16 au16musicnotes[] = 
     { 
-        C4, C4, G4, G4, A4, A4, G4, F4, F4, E4, E4, D4, D4, C4
+        C4,NN,C4,NN,G4,NN,G4,NN,A4,NN,A4,NN,G4,NN,F4,NN,F4,NN,E4,NN,E4,NN,D4,NN,D4,NN,C4,NN
     };
     static u16 au16duration[] = 
     {
-        N4, N4, N4, N4, N4, N4, N2, N4, N4, N4, N4, N4, N4, N2
+        N4,RT,N4,RT,N4,RT,N4,RT,N4,RT,N4,RT,N2,RT,N4,RT,N4,RT,N4,RT,N4,RT,N4,RT,N4,RT,N4,RT
     };
     static u16 u16timeofnotes = 0;
     static u16 u16durationoftime = 0;
+    static u8 u8diffnote = 0; 
     static u16 u16durationofnote = 0;
     static u8 u8indexofmusicnotes = 0;
-    static u8 u8diffnote = 0; 
    
         if(u16timeofnotes  == u16durationoftime) {
             if(u8diffnote) {
@@ -258,7 +258,7 @@ void UserAppRun(void)
                 u8indexofmusicnotes += 1;
             }
             else {
-                if(u8indexofmusicnotes < 10) {
+                if(u8indexofmusicnotes < 27) {
                     u16durationoftime = RT;
                     u16durationofnote = 32767; // value from void InterruptTimerXus
                 }

@@ -3045,44 +3045,72 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "240
 [; ;user_app.c: 240:     static u16 au16musicnotes[] =
-[v F15933 `us ~T0 @X0 -> 14 `i s au16musicnotes ]
+[v F15933 `us ~T0 @X0 -> 28 `i s au16musicnotes ]
 [i F15933
 :U ..
 -> -> 60 `i `us
+-> -> 0 `i `us
 -> -> 60 `i `us
+-> -> 0 `i `us
 -> -> 40 `i `us
+-> -> 0 `i `us
 -> -> 40 `i `us
+-> -> 0 `i `us
 -> -> 36 `i `us
+-> -> 0 `i `us
 -> -> 36 `i `us
+-> -> 0 `i `us
 -> -> 40 `i `us
+-> -> 0 `i `us
 -> -> 45 `i `us
+-> -> 0 `i `us
 -> -> 45 `i `us
+-> -> 0 `i `us
 -> -> 47 `i `us
+-> -> 0 `i `us
 -> -> 47 `i `us
+-> -> 0 `i `us
 -> -> 53 `i `us
+-> -> 0 `i `us
 -> -> 53 `i `us
+-> -> 0 `i `us
 -> -> 60 `i `us
+-> -> 0 `i `us
 ..
 ]
 "244
 [; ;user_app.c: 244:     static u16 au16duration[] =
-[v F15934 `us ~T0 @X0 -> 14 `i s au16duration ]
+[v F15934 `us ~T0 @X0 -> 28 `i s au16duration ]
 [i F15934
 :U ..
 -> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
 -> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
 -> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
 -> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
 -> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
 -> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
 -> / -> -> -> 2048 `i `us `ui -> -> 2 `i `ui `us
+-> -> 50 `i `us
 -> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
 -> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
 -> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
 -> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
 -> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
 -> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
--> / -> -> -> 2048 `i `us `ui -> -> 2 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
 ..
 ]
 "248
@@ -3098,20 +3126,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `us
 ]
 "250
-[; ;user_app.c: 250:     static u16 u16durationofnote = 0;
-[v F15937 `us ~T0 @X0 1 s u16durationofnote ]
+[; ;user_app.c: 250:     static u8 u8diffnote = 0;
+[v F15937 `uc ~T0 @X0 1 s u8diffnote ]
 [i F15937
--> -> 0 `i `us
-]
-"251
-[; ;user_app.c: 251:     static u8 u8indexofmusicnotes = 0;
-[v F15938 `uc ~T0 @X0 1 s u8indexofmusicnotes ]
-[i F15938
 -> -> 0 `i `uc
 ]
+"251
+[; ;user_app.c: 251:     static u16 u16durationofnote = 0;
+[v F15938 `us ~T0 @X0 1 s u16durationofnote ]
+[i F15938
+-> -> 0 `i `us
+]
 "252
-[; ;user_app.c: 252:     static u8 u8diffnote = 0;
-[v F15939 `uc ~T0 @X0 1 s u8diffnote ]
+[; ;user_app.c: 252:     static u8 u8indexofmusicnotes = 0;
+[v F15939 `uc ~T0 @X0 1 s u8indexofmusicnotes ]
 [i F15939
 -> -> 0 `i `uc
 ]
@@ -3121,17 +3149,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "255
 [; ;user_app.c: 255:             if(u8diffnote) {
-[e $ ! != -> F15939 `i -> 0 `i 2279  ]
+[e $ ! != -> F15937 `i -> 0 `i 2279  ]
 {
 "256
 [; ;user_app.c: 256:                 u16durationoftime = au16duration[u8indexofmusicnotes];
-[e = F15936 *U + &U F15934 * -> F15938 `ux -> -> # *U &U F15934 `ui `ux ]
+[e = F15936 *U + &U F15934 * -> F15939 `ux -> -> # *U &U F15934 `ui `ux ]
 "257
-[; ;user_app.c: 257:                 u16durationofnote = au16musicnotes[u8indexofmusicnotes] * 4;
-[e = F15937 -> * -> *U + &U F15933 * -> F15938 `ux -> -> # *U &U F15933 `ui `ux `ui -> -> 4 `i `ui `us ]
+[; ;user_app.c: 257:                 u16durationofnote = au16musicnotes[u8indexofmusicnotes] * 2;
+[e = F15938 -> * -> *U + &U F15933 * -> F15939 `ux -> -> # *U &U F15933 `ui `ux `ui -> -> 2 `i `ui `us ]
 "258
 [; ;user_app.c: 258:                 u8indexofmusicnotes += 1;
-[e =+ F15938 -> -> 1 `i `uc ]
+[e =+ F15939 -> -> 1 `i `uc ]
 "259
 [; ;user_app.c: 259:             }
 }
@@ -3141,15 +3169,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 2279 ]
 {
 "261
-[; ;user_app.c: 261:                 if(u8indexofmusicnotes < 10) {
-[e $ ! < -> F15938 `i -> 10 `i 2281  ]
+[; ;user_app.c: 261:                 if(u8indexofmusicnotes < 27) {
+[e $ ! < -> F15939 `i -> 27 `i 2281  ]
 {
 "262
 [; ;user_app.c: 262:                     u16durationoftime = (u16)50;
 [e = F15936 -> -> 50 `i `us ]
 "263
 [; ;user_app.c: 263:                     u16durationofnote = 32767;
-[e = F15937 -> -> 32767 `i `us ]
+[e = F15938 -> -> 32767 `i `us ]
 "264
 [; ;user_app.c: 264:                 }
 }
@@ -3160,13 +3188,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "266
 [; ;user_app.c: 266:                     u8indexofmusicnotes = 0;
-[e = F15938 -> -> 0 `i `uc ]
+[e = F15939 -> -> 0 `i `uc ]
 "267
 [; ;user_app.c: 267:                     u16durationoftime = 100;
 [e = F15936 -> -> 100 `i `us ]
 "268
 [; ;user_app.c: 268:                     u16durationofnote = 32767;
-[e = F15937 -> -> 32767 `i `us ]
+[e = F15938 -> -> 32767 `i `us ]
 "269
 [; ;user_app.c: 269:                 }
 }
@@ -3177,10 +3205,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 2280 ]
 "271
 [; ;user_app.c: 271:             InterruptTimerXus(u16durationofnote, u8diffnote);
-[e ( _InterruptTimerXus (2 , F15937 -> F15939 `a ]
+[e ( _InterruptTimerXus (2 , F15938 -> F15937 `a ]
 "272
 [; ;user_app.c: 272:             u8diffnote = !u8diffnote;
-[e = F15939 -> -> ! != -> F15939 `i -> 0 `i `i `uc ]
+[e = F15937 -> -> ! != -> F15937 `i -> 0 `i `i `uc ]
 "273
 [; ;user_app.c: 273:             u16timeofnotes = 0;
 [e = F15935 -> -> 0 `i `us ]

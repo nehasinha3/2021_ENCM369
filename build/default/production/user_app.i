@@ -27424,26 +27424,26 @@ void UserAppRun(void)
 {
     static u16 au16musicnotes[] =
     {
-        (u16)(u16)60, (u16)(u16)60, (u16)(u16)40, (u16)(u16)40, (u16)(u16)36, (u16)(u16)36, (u16)(u16)40, (u16)(u16)45, (u16)(u16)45, (u16)(u16)47, (u16)(u16)47, (u16)(u16)53, (u16)(u16)53, (u16)(u16)60
+        (u16)(u16)60,(u16)(u16)0,(u16)(u16)60,(u16)(u16)0,(u16)(u16)40,(u16)(u16)0,(u16)(u16)40,(u16)(u16)0,(u16)(u16)36,(u16)(u16)0,(u16)(u16)36,(u16)(u16)0,(u16)(u16)40,(u16)(u16)0,(u16)(u16)45,(u16)(u16)0,(u16)(u16)45,(u16)(u16)0,(u16)(u16)47,(u16)(u16)0,(u16)(u16)47,(u16)(u16)0,(u16)(u16)53,(u16)(u16)0,(u16)(u16)53,(u16)(u16)0,(u16)(u16)60,(u16)(u16)0
     };
     static u16 au16duration[] =
     {
-        (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 2), (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 4), (u16)((u16)2048 / 2)
+        (u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 2),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50
     };
     static u16 u16timeofnotes = 0;
     static u16 u16durationoftime = 0;
+    static u8 u8diffnote = 0;
     static u16 u16durationofnote = 0;
     static u8 u8indexofmusicnotes = 0;
-    static u8 u8diffnote = 0;
 
         if(u16timeofnotes == u16durationoftime) {
             if(u8diffnote) {
                 u16durationoftime = au16duration[u8indexofmusicnotes];
-                u16durationofnote = au16musicnotes[u8indexofmusicnotes] * 4;
+                u16durationofnote = au16musicnotes[u8indexofmusicnotes] * 2;
                 u8indexofmusicnotes += 1;
             }
             else {
-                if(u8indexofmusicnotes < 10) {
+                if(u8indexofmusicnotes < 27) {
                     u16durationoftime = (u16)50;
                     u16durationofnote = 32767;
                 }
